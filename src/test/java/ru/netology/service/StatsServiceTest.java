@@ -29,7 +29,7 @@ public class StatsServiceTest {
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         long expectedsum = 180;
-        long actualsum = service.SumSales(sales);
+        long actualsum = service.sumSales(sales);
 
         Assertions.assertEquals(expectedsum, actualsum);
     }
@@ -38,7 +38,7 @@ public class StatsServiceTest {
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         long expectedsvg = 15;
-        long actualavg = service.AvgSales(sales);
+        long actualavg = service.avgSales(sales);
 
         Assertions.assertEquals(expectedsvg, actualavg);
     }
@@ -48,7 +48,7 @@ public class StatsServiceTest {
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         long expectedb = 5;
-        long actualb = service.BelowAvgSales(sales);
+        long actualb = service.belowAvgSales(sales);
 
         Assertions.assertEquals(expectedb, actualb);
     }
@@ -58,7 +58,7 @@ public class StatsServiceTest {
         StatsService service = new StatsService();
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         long expectedabv = 5;
-        long actualabv = service.AboveAvgSales(sales);
+        long actualabv = service.aboveAvgSales(sales);
 
         Assertions.assertEquals(expectedabv, actualabv);
     }

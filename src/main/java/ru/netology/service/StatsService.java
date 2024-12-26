@@ -26,7 +26,7 @@ public class StatsService {
         return maxMonth + 1;
     }
 
-    public int SumSales(long[] sales) {
+    public int sumSales(long[] sales) {
         long sum = 0;
 
         for (long num : sales) {
@@ -35,24 +35,14 @@ public class StatsService {
         return (int) sum;
     }
 
-    public int AvgSales(long[] sales) {
-        long sum = 0;
-        for (long num : sales) {
-            sum += num;
-        }
-        long avg = sum / 12;
-
+    public int avgSales(long[] sales) {
+            long sum = sumSales(sales);
+            long avg = sum / 12;
         return (int) avg;
-
-    }
-
-    public int BelowAvgSales(long[] sales) {
-        long sum = 0;
-        for (long num : sales) {
-            sum += num;
         }
-        long avg = sum / 12;
 
+    public int belowAvgSales(long[] sales) {
+        long avg = avgSales(sales);
         int count = 0; // счётчик месяцев
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] < avg) count++;
@@ -61,13 +51,8 @@ public class StatsService {
 
     }
 
-    public int AboveAvgSales(long[] sales) {
-        long sum = 0;
-        for (long num : sales) {
-            sum += num;
-        }
-        long avg = sum / 12;
-
+    public int aboveAvgSales(long[] sales) {
+        long avg = avgSales(sales);
         int count = 0; // счётчик месяцев
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] > avg) count++;
